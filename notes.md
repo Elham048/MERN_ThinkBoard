@@ -22,4 +22,6 @@ Later optional changes in the postNotes function makes it so that it will also s
 
 7. shortcut for opening and closing a terminal in vscode is Ctrl+`
 
-8. For the frontend we used tailwind.css, this helps us  by allowing to write the css code directly into the .js files without needing to write it in a separate .css file. 
+8. For the frontend we used tailwind.css, this helps us by allowing to write the css code directly into the .js files without needing to write it in a separate .css file.
+
+9. The daisyui, a library for the tailwind.css is used so that classes can be easily called after installing the daisyui version 4.12.24
