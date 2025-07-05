@@ -7,10 +7,9 @@ import toast from "react-hot-toast";
 const App = () => {
   return (
     <div>
-      <h1>Hello ThinkBoard</h1>
       <button
         onClick={() => toast.success("congrats")}
-        className="text-red-500 p-4"
+        className="text-red-500 p-4 bg-pink-300"
       >
         Click Me
       </button>

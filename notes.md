@@ -21,3 +21,5 @@ Later optional changes in the postNotes function makes it so that it will also s
    For implementing the rate limiting using middleware, we will use Upstash and Redis (free).
 
 7. shortcut for opening and closing a terminal in vscode is Ctrl+`
+
+8. For the frontend we used tailwind.css, this helps us  by allowing to write the css code directly into the .js files without needing to write it in a separate .css file. 
