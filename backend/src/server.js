@@ -1,7 +1,9 @@
 import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
-import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.js";
 
 dotenv.config();
@@ -19,6 +21,8 @@ app.get("/api/notes", (req, res) => {
 
 //middleware
 //we used this just before our routes so that we can access the request body in our routes
+app.use(cors({ origin: "http://localhost:5173" })); // Enable CORS for the frontend URL
+
 app.use(express.json());
 
 app.use(rateLimiter); // Apply the rate limiter middleware
@@ -33,7 +37,6 @@ app.use((req, res, next) => {
 
 //this part is imported from notesRoutes.js
 app.use("/api/notes", notesRoutes);
-
 
 //this is done to ensure that the databse connected first before the server starts listening to requests
 //if the database is not connected, the server will not start
