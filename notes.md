@@ -277,3 +277,17 @@ To avoid this we need to add another middleware called the cors
 
 this cors middleware needs to be placed before the routes so that the frontend can access the backend API
 if we place it after the routes, the frontend will not be able to access the backend
+
+14. Besides checking for errors in the backend( terminal and postman ) and frontend( terminal and resulting webpage), we can also check for error when there is nothing shown the resulting webpage (right click->inspect->errors and warnings logo on topmost right)
+
+15. In CreatePage.jsx-> in handleSubmit() , usually after we give any title and content and click Create Note , it will refresh the page. To avoid this default behaviour, we use e.preventDefault() as follows
+
+const handleSubmit = (e) => {
+e.preventDefault(); // Prevent default form submission behavior
+console.log(title);
+console.log(content);
+};
+
+16. Some shortcuts in react
+    --> clg = console.log()
+    --> .card-actions = <div className="card-actions">

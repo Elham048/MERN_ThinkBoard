@@ -1,8 +1,26 @@
 import { PenSquareIcon, Trash2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { formatDate } from "../lib/utils";
+import api from "../lib/axios";
+import toast from "react-hot-toast";
 
-const NoteCard = ({ note }) => {
+const NoteCard = ({ note, setNotes }) => {
+  const handleDelete = async (e, id) => {
+    e.preventDefault(); //usually the entire NoteCard would be a link, but we want to prevent the default behavior of navigating away when deleting
+
+    if (!window.confirm("Are you sure you want to delete this note?")) return;
+
+    try {
+      await api.delete(`/notes/${id}`);
+      setNotes((prev) => prev.filter((note) => note._id !== id)); //remove deleted note from the state and re-render the UI with the rest of the notes
+      //if we don't do this, the UI will not update and will still show the deleted note. So we need to refresh the page to see the changes
+      toast.success("Note deleted successfully");
+    } catch (error) {
+      toast.error("Failed to delete note.");
+      console.error("Error deleting note", error);
+    }
+  };
+
   return (
     <Link
       to={`/note/${note._id}`}
@@ -15,9 +33,12 @@ const NoteCard = ({ note }) => {
           <span className="text-sm text-base-content/60">
             {formatDate(new Date(note.createdAt))}
           </span>
-          <div className="flex item-center gap-1">
-            <PenSquareIcon className="size-4" />
-            <button className="btn btn-ghost btn-xs text-error">
+          <div className="flex items-center gap-2">
+            <PenSquareIcon className="size-4 cursor-pointer" />
+            <button
+              className="btn btn-ghost btn-xs text-error p-1"
+              onClick={(e) => handleDelete(e, note._id)}
+            >
               <Trash2Icon className="size-4" />
             </button>
           </div>
