@@ -291,3 +291,42 @@ console.log(content);
 16. Some shortcuts in react
     --> clg = console.log()
     --> .card-actions = <div className="card-actions">
+
+17. This is how to add updates to an already existing project repository in github
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git init
+Reinitialized existing Git repository in C:/8th_Semester/Project/MERN_ThinkBoard/.git/
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git add .
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git commit -m "Included delete functionality and also empty note page"
+[main edee4e2] Included delete functionality and also empty note page
+6 files changed, 179 insertions(+), 13 deletions(-)
+create mode 100644 frontend/src/components/NotesNotFound.jsx
+create mode 100644 frontend/src/lib/axios.js
+rewrite frontend/src/pages/CreatePage.jsx (60%)
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git remote add origin https://github.com/Elham048/MERN_ThinkBoard.git
+error: remote origin already exists.
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git remote set-url origin https://github.com/Elham048/MERN_ThinkBoard.git
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git branch -M main
+
+C:\8th_Semester\Project\MERN_ThinkBoard>git push -u origin main
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 3.97 KiB | 812.00 KiB/s, done.
+Total 13 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/Elham048/MERN_ThinkBoard.git
+e7da475..edee4e2 main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+C:\8th_Semester\Project\MERN_ThinkBoard>
+
+18. Going to the website "bg.ibelick.com" we can get the code for the background of our app. Here we just changed the color to meet our requirements.
+
+<div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
