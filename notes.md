@@ -330,3 +330,43 @@ C:\8th_Semester\Project\MERN_ThinkBoard>
 18. Going to the website "bg.ibelick.com" we can get the code for the background of our app. Here we just changed the color to meet our requirements.
 
 <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
+
+19. In the terminal give the command
+    C:\8th_Semester\Project\MERN_ThinkBoard>npm init -y
+    Wrote to C:\8th_Semester\Project\MERN_ThinkBoard\package.json:
+
+{
+"name": "mern_thinkboard",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1"  
+ },
+"keywords": [],
+"author": "",
+"license": "ISC"
+}
+
+This creates the package.json which is then updated as
+
+{
+"name": "mern_thinkboard",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+},
+"keywords": [],
+"author": "",
+"license": "ISC"
+}
+
+by doing this, after we delete the node_modules folder in both frontend and backend, we can run the command
+
+C:\8th_Semester\Project\MERN_ThinkBoard>npm run build
+
+This will install all the dependencies and also build the frontend application. This also creates a dist folder under frontend folder, which is the optimized version of the application we have built.
+
+All this is done as when this app is uploaded to github, there won't be the dependencies with it. So by running these commands in the render.com, these dependencies will be automatically installed and the frontend will also be built. Thus we will get the optimized version of the react app.
