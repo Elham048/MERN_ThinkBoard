@@ -12,7 +12,8 @@
 
 Displays all created notes.
 
-<img src="Thinkboard_Screenshots/Thinkboard_Screenshots/CreateNoteFeature/Thinkboard_Homepage.png" width="100%"/>
+<img width="1910" height="982" alt="Thinkboard_backend1" src="https://github.com/user-attachments/assets/c0b9f9a0-eaaf-4263-8c4d-ac46fdc3c08b" />
+
 
 ---
 
